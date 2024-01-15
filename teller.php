@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="teller.css">
 <body>
     <?php
-
+$
     ?>
 
 </body>
