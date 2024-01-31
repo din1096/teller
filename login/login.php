@@ -5,23 +5,29 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $password = $_POST['password'];
 
     $host = 'localhost';
-    $dbusername = 'root';
+    $dbemail = 'root';
     $dbpassword = "";
     $dbname = "auth":
 
 
-    $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+    $conn = new mysqli($host, $dbemail, $dbpassword, $dbname);
 
     if($conn->connect_error){
         die("connection failed:". $conn->connect_error);
 
     }
 
-    $query = "SELECT *FROM login WHERE email = '$email' AND password='$password'";
+    $query = "SELECT *FROM login WHERE email = '$email' AND password='$password'";    
     
     $result = $conn->query($query);
-    if($result->num_rows ==)
-
+    if($result->num_rows ==1){
+        header("location: teller.php");
+        exit()
+    }
+    else{
+        exit()
+    }
+    $conn->close()
 }
 
 
